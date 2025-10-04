@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+import { Navbar } from '../components/Navbar.tsx';
+import { NavbarMobile } from '../components/NavbarMobile.tsx';
+---
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+  const isDark = getThemePreference() === 'dark';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+  if (typeof localStorage !== 'undefined') {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  }
+</script>
+
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <!-- <Navbar client:load /> -->
+    <div class='h-screen overflow-hidden'>
+      <div class='relative h-full pb-20'>
+        <slot />
+      </div>
+      <NavbarMobile client:load />
+    </div>
+  </body>
+</html>
+
+<style>
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
