@@ -5,9 +5,6 @@ import myEmoji from '@/assets/images/myEmoji.png';
 import Github from '@/components/icons/Github.astro';
 import LinkedIn from '@/components/icons/Linkedin.astro';
 import LightRays from '@/components/LightRays';
-import MagicBento from '@/components/MagicBento';
-import Dock from '@/components/Dock.tsx';
-import { NavbarMobile } from '@/components/NavbarMobile.tsx';
 import ProfileCard from '@/components/ProfileCard.tsx';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from '@/components/icons/Icons';
@@ -73,9 +70,10 @@ import { ArrowRightIcon } from '@/components/icons/Icons';
         client:load
         raysOrigin='top-center'
         raysColor='#0077c6'
-        raysSpeed={1.5}
-        lightSpread={0.8}
-        rayLength={1.2}
+        raysSpeed={0.8}
+        fadeDistance={1.2}
+        lightSpread={1.5}
+        rayLength={20}
         followMouse={true}
         mouseInfluence={0.1}
         noiseAmount={0.1}

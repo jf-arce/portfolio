@@ -1,10 +1,15 @@
 ---
+import LogoLoop from '@/components/LogoLoop';
 import PageContainer from '@/components/PageContainer.astro';
 import Layout from '@/layouts/Layout.astro';
+import { TechStackLogoLoop } from '@/components/TechStackLogoLoop';
 ---
 
 <Layout>
   <PageContainer>
     <h1>About Page</h1>
+    <div>
+      <TechStackLogoLoop client:load />
+    </div>
   </PageContainer>
 </Layout>
