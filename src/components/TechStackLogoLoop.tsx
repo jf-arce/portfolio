@@ -10,34 +10,35 @@ import LogoLoop from './LogoLoop';
 
 export const TechStackLogoLoop = () => {
   const techLogos = [
-    { node: <ReactIcon />, title: 'React', href: 'https://react.dev' },
-    { node: <NextjsIcon />, title: 'NextJS', href: 'https://nextjs.org' },
-    { node: <TypeScriptIcon />, title: 'TypeScript', href: 'https://www.typescriptlang.org' },
-    { node: <NodejsIcon />, title: 'NodeJS', href: 'https://nodejs.org' },
-    { node: <NestJSIcon />, title: 'NestJS', href: 'https://nestjs.com' },
-    { node: <CIcon />, title: 'C#', href: 'https://docs.microsoft.com/en-us/dotnet/csharp/' },
-  ];
-
-  // Alternative with image sources
-  const imageLogos = [
-    { src: '/logos/company1.png', alt: 'Company 1', href: 'https://company1.com' },
-    { src: '/logos/company2.png', alt: 'Company 2', href: 'https://company2.com' },
-    { src: '/logos/company3.png', alt: 'Company 3', href: 'https://company3.com' },
+    { node: <ReactIcon className='h-12 w-12' />, title: 'React', href: 'https://react.dev' },
+    { node: <NextjsIcon className='h-12 w-12' />, title: 'NextJS', href: 'https://nextjs.org' },
+    {
+      node: <TypeScriptIcon className='h-12 w-12' />,
+      title: 'TypeScript',
+      href: 'https://www.typescriptlang.org',
+    },
+    { node: <NodejsIcon className='h-12 w-12' />, title: 'NodeJS', href: 'https://nodejs.org' },
+    { node: <NestJSIcon className='h-12 w-12' />, title: 'NestJS', href: 'https://nestjs.com' },
+    {
+      node: <CIcon className='h-12 w-12' />,
+      title: 'C#',
+      href: 'https://docs.microsoft.com/en-us/dotnet/csharp/',
+    },
   ];
 
   return (
-    <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
+    <div className='w-full'>
       <LogoLoop
         logos={techLogos}
-        speed={120}
+        speed={80}
         direction='left'
+        width='100%'
         logoHeight={48}
-        gap={40}
-        pauseOnHover
-        scaleOnHover
-        fadeOut
-        fadeOutColor='#ffffff'
-        ariaLabel='Technology partners'
+        gap={32}
+        pauseOnHover={true}
+        scaleOnHover={true}
+        fadeOut={true}
+        ariaLabel='Technology stack'
       />
     </div>
   );
