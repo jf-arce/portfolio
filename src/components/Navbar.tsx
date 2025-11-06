@@ -14,8 +14,10 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className='absolute right-0 bottom-4 left-0 z-50'>
-      <Dock items={items} panelHeight={68} baseItemSize={50} magnification={70} />
+    <div className='pointer-events-none fixed right-0 bottom-2 left-0 z-50 sm:bottom-4'>
+      <div className='pointer-events-auto'>
+        <Dock items={items} panelHeight={68} baseItemSize={50} magnification={70} />
+      </div>
     </div>
   );
 };

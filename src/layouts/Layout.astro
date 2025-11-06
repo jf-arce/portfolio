@@ -27,13 +27,16 @@ import { Navbar } from '@/components/Navbar';
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'
+      rel='stylesheet'
+    />
     <title>Astro Basics</title>
   </head>
-  <body>
+  <body style="font-family: 'Roboto', sans-serif;">
     <!-- <Navbar client:load /> -->
     <div class='h-screen overflow-hidden'>
-      <div class='relative h-full pb-20'>
+      <div class='relative h-full pb-24'>
         <slot />
       </div>
       <Navbar client:load />

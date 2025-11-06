@@ -37,7 +37,7 @@ export const TechStackLogoLoop = () => {
         gap={32}
         pauseOnHover={true}
         scaleOnHover={true}
-        fadeOut={true}
+        fadeOut={false}
         ariaLabel='Technology stack'
       />
     </div>
