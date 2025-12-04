@@ -1,0 +1,52 @@
+---
+import { Button } from "@/components/ui/button";
+import Github from "@/components/icons/Github.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import { ArrowRightIcon } from "lucide-react";
+---
+
+<div
+    class="flex flex-col sm:flex-row gap-7 sm:gap-5 mt-4 justify-center lg:justify-start"
+>
+    <div class="flex gap-4 justify-center lg:justify-start">
+        <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="rounded-full hover:bg-foreground/10 hover:text-foreground"
+        >
+            <a
+                href="https://github.com/jf-arce"
+                target="_blank"
+                aria-label="Github"
+            >
+                <Github class="size-9" />
+            </a>
+        </Button>
+        <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="rounded-full hover:bg-blue-500/10 hover:text-blue-500"
+        >
+            <a
+                href="https://www.linkedin.com/in/jose-francisco-arce-b99824248/"
+                target="_blank"
+                aria-label="LinkedIn"
+            >
+                <Linkedin class="size-9" />
+            </a>
+        </Button>
+    </div>
+    <Button asChild size="lg" className="rounded-full font-semibold px-8">
+        <a
+            href="/about"
+            class="group flex gap-2 items-center justify-center lg:justify-start"
+        >
+            Ver mis Proyectos
+            <ArrowRightIcon
+                className="size-4 transition-transform group-hover:translate-x-1"
+            />
+        </a>
+    </Button>
+</div>

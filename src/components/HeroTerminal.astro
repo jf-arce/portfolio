@@ -1,0 +1,47 @@
+---
+import {
+    AnimatedSpan,
+    Terminal,
+    TypingAnimation as TerminalTyping,
+} from "@/components/ui/terminal";
+---
+
+<Terminal client:load className="w-full shadow-2xl shadow-purple-500/10">
+    <TerminalTyping
+        client:load
+        delay={200}
+        duration={50}
+        text="> ./init-profile.sh --user=jf-arce"
+    />
+
+    <AnimatedSpan client:load delay={2200} className="text-green-500">
+        ✔ Experience detected: 3+ Years.
+    </AnimatedSpan>
+
+    <AnimatedSpan client:load delay={2700} className="text-green-500">
+        ✔ Education: Systems Eng. (Loading...)
+    </AnimatedSpan>
+
+    <AnimatedSpan client:load delay={3200} className="text-blue-500">
+        ℹ Analyzing core skills...
+    </AnimatedSpan>
+
+    <AnimatedSpan client:load delay={3700} className="text-muted-foreground">
+        - Detected focus: Performance Optimization
+    </AnimatedSpan>
+    <AnimatedSpan client:load delay={4200} className="text-muted-foreground">
+        - Primary objective: Efficient Solutions
+    </AnimatedSpan>
+
+    <AnimatedSpan client:load delay={4700} className="text-muted-foreground">
+        {" "}
+    </AnimatedSpan>
+
+    <TerminalTyping
+        client:load
+        delay={4700}
+        duration={50}
+        className="text-purple-400 font-bold mt-4"
+        text="🚀 Profile successfully loaded!"
+    />
+</Terminal>

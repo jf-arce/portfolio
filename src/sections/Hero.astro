@@ -1,0 +1,58 @@
+---
+import { AuroraText } from "@/components/ui/aurora-text";
+import PageContainer from "@/layouts/PageContainer.astro";
+import HeroTerminal from "@/components/HeroTerminal.astro";
+import HeroAvatar from "@/components/HeroAvatar.astro";
+import HeroCallToActions from "@/components/HeroCallToActions.astro";
+---
+
+<section
+    class="mx-auto flex min-h-[calc(100vh-68px)] items-center justify-center overflow-hidden"
+>
+    <div
+        class="absolute top-0 z-[-2] lg:h-screen w-full bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+
+    <PageContainer
+        class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 sm:gap-10 lg:gap-12 2xl:mb-[68px]"
+    >
+        <div class="flex flex-col gap-4 lg:mb-[68px]">
+            <HeroAvatar />
+
+            <div class="space-y-4">
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-center lg:text-left">
+                        <AuroraText
+                            client:load
+                            className="font-extrabold tracking-tight text-4xl sm:text-5xl 2xl:text-6xl text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-600"
+                        >
+                            Jose Francisco Arce
+                        </AuroraText>
+                    </h1>
+
+                    <h2
+                        class="text-2xl font-semibold text-foreground/80 sm:text-3xl text-center lg:text-left"
+                    >
+                        <span class="text-blue-500"> Full Stack</span>
+                        Developer
+                    </h2>
+                </div>
+
+                <p
+                    class="text-muted-foreground text-base sm:text-lg text-balance leading-relaxed max-w-xl text-center lg:text-left"
+                >
+                    Apasionado de la tecnología con más de 3 años creando
+                    aplicaciones web eficientes y de alto rendimiento. Casi
+                    Ingeniero en Sistemas 🎓 y listo para el siguiente desafío.
+                </p>
+            </div>
+
+            <HeroCallToActions />
+        </div>
+
+        <div class="w-full flex justify-center lg:justify-end">
+            <HeroTerminal />
+        </div>
+    </PageContainer>
+</section>;
