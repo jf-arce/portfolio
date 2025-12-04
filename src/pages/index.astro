@@ -1,85 +1,14 @@
 ---
-import PageContainer from '@/components/PageContainer.astro';
-import Layout from '@/layouts/Layout.astro';
-import myEmoji from '@/assets/images/myEmoji.png';
-import Github from '@/components/icons/Github.astro';
-import LinkedIn from '@/components/icons/Linkedin.astro';
-import LightRays from '@/components/LightRays';
-import ProfileCard from '@/components/ProfileCard.tsx';
-import { Button } from '@/components/ui/button';
-import { ArrowRightIcon } from '@/components/icons/Icons';
+import Layout from "@/layouts/Layout.astro";
+import Home from "@/pages/Home.astro";
+import Navbar from "@/layouts/Navbar.astro";
+import Footer from "@/layouts/Footer.astro";
 ---
 
 <Layout>
-  <div class='h-full'>
-    <PageContainer className='flex h-full flex-col items-center gap-16 md:flex-row'>
-      <div class='flex h-full flex-1 flex-col justify-center text-center md:text-left'>
-        <div class='flex max-w-[550px] flex-col gap-7'>
-          <div>
-            <h1 class='text-5xl font-bold sm:text-6xl'>Jose Francisco Arce</h1>
-            <p class='mt-2 text-2xl'>
-              Full Stack <span class='text-primary font-medium'>Developer</span>
-            </p>
-          </div>
-          <p class='text-pretty'>
-            Soy un apasionado de la tecnología con más de 3 años en desarrollo web. Me especializo
-            en crear aplicaciones eficientes y de alto rendimiento. <br /> Estoy en el último año de
-            la carrera, casi Ingeniero en Sistemas ✌️.
-          </p>
-          <div class='flex items-center justify-center md:justify-start'>
-            <a href='https://github.com/jf-arce' target='_blank' rel='noopener noreferrer'>
-              <Github class='h-10 w-10' />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/jose-francisco-arce-b99824248/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <LinkedIn class='ml-4 h-10 w-10' />
-            </a>
-          </div>
-          <div class='flex items-center justify-center md:justify-start'>
-            <Button asChild>
-              <a href='/about' class='group flex w-fit gap-0.5'>
-                <span class='font-medium'>Mis Proyectos</span>
-                <ArrowRightIcon className='transition-transform group-hover:translate-x-1' />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      <div class='hidden items-center justify-center md:flex'>
-        <ProfileCard
-          client:load
-          name='Jose Francisco Arce'
-          title='Mi Stack'
-          handle='jf-arce'
-          status='Online'
-          contactText='Contact Me'
-          avatarUrl={myEmoji.src}
-          enableTilt={true}
-          enableMobileTilt={false}
-          onContactClick={() => console.log('Contact clicked')}
-        />
-      </div>
-    </PageContainer>
-
-    <div class='absolute inset-0 -z-10 h-full w-full bg-black'>
-      <LightRays
-        client:load
-        raysOrigin='top-center'
-        raysColor='#0077c6'
-        raysSpeed={0.8}
-        fadeDistance={1.2}
-        lightSpread={1.5}
-        rayLength={20}
-        followMouse={false}
-        mouseInfluence={0.1}
-        noiseAmount={0.1}
-        distortion={0.05}
-        className='custom-rays'
-      />
-    </div>
-  </div>
+    <Navbar />
+    <main class="mt-[68px]">
+        <Home />
+    </main>
+    <Footer />
 </Layout>

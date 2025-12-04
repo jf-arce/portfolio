@@ -1,128 +1,171 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+:root {
+    --background: #fafafa;
+    --foreground: #303030;
+    --card: #ffffff;
+    --card-foreground: #303030;
+    --popover: #ffffff;
+    --popover-foreground: #303030;
+    --primary: #0091ff;
+    --primary-foreground: #fafafa;
+    --secondary: #303030;
+    --secondary-foreground: #fafafa;
+    --muted: #f3f4f6;
+    --muted-foreground: #8a919e;
+    --accent: #303030;
+    --accent-foreground: #fafafa;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #c6c8cc;
+    --input: #c6c8cc;
+    --ring: #7d7d7d;
+    --chart-1: #0091ff;
+    --chart-2: #303030;
+    --chart-3: #173469;
+    --chart-4: #cfcfcf;
+    --chart-5: #080808;
+    --sidebar: #fafafa;
+    --sidebar-foreground: #303030;
+    --sidebar-primary: #0091ff;
+    --sidebar-primary-foreground: #303030;
+    --sidebar-accent: #303030;
+    --sidebar-accent-foreground: #fafafa;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #7d7d7d;
+    --radius: 0.75rem;
+
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: #f0f0f0;
-  --foreground: #121212;
-  --card: #f0f0f0;
-  --card-foreground: #121212;
-  --popover: #f0f0f0;
-  --popover-foreground: #121212;
-  --primary: #0077c6;
-  --primary-foreground: #f0f0f0;
-  --secondary: #66b3e6;
-  --secondary-foreground: #121212;
-  --muted: #e0e0e0;
-  --muted-foreground: #555555;
-  --accent: #cce6f9;
-  --accent-foreground: #121212;
-  --destructive: #e63946;
-  --border: #d0d0d0;
-  --input: #d0d0d0;
-  --ring: #3399dd;
-  --chart-1: #0077c6;
-  --chart-2: #005a99;
-  --chart-3: #3399dd;
-  --chart-4: #66b3e6;
-  --chart-5: #cce6f9;
-  --sidebar: #f0f0f0;
-  --sidebar-foreground: #121212;
-  --sidebar-primary: #0077c6;
-  --sidebar-primary-foreground: #f0f0f0;
-  --sidebar-accent: #66b3e6;
-  --sidebar-accent-foreground: #121212;
-  --sidebar-border: #d0d0d0;
-  --sidebar-ring: #3399dd;
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+    --font-serif: var(--font-serif);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+    @keyframes blink-cursor {
+        0%,
+        49% {
+            opacity: 1;
+        }
+        50%,
+        100% {
+            opacity: 0;
+        }
+    }
+    --animate-aurora: aurora 8s ease-in-out infinite alternate;
+    @keyframes aurora {
+        0% {
+            background-position: 0% 50%;
+            transform: rotate(-5deg) scale(0.9);
+        }
+        25% {
+            background-position: 50% 100%;
+            transform: rotate(5deg) scale(1.1);
+        }
+        50% {
+            background-position: 100% 50%;
+            transform: rotate(-3deg) scale(0.95);
+        }
+        75% {
+            background-position: 50% 0%;
+            transform: rotate(3deg) scale(1.05);
+        }
+        100% {
+            background-position: 0% 50%;
+            transform: rotate(-5deg) scale(0.9);
+        }
+    }
 }
 
 .dark {
-  --background: #121212;
-  --foreground: #f0f0f0;
-  --card: #1e1e1e;
-  --card-foreground: #f0f0f0;
-  --popover: #1e1e1e;
-  --popover-foreground: #f0f0f0;
-  --primary: #0077c6;
-  --primary-foreground: #f0f0f0;
-  --secondary: #66b3e6;
-  --secondary-foreground: #f0f0f0;
-  --muted: #2a2a2a;
-  --muted-foreground: #999999;
-  --accent: #3399dd;
-  --accent-foreground: #f0f0f0;
-  --destructive: #ff6b6b;
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #3399dd;
-  --chart-1: #66b3e6;
-  --chart-2: #0077c6;
-  --chart-3: #3399dd;
-  --chart-4: #005a99;
-  --chart-5: #cce6f9;
-  --sidebar: #1e1e1e;
-  --sidebar-foreground: #f0f0f0;
-  --sidebar-primary: #66b3e6;
-  --sidebar-primary-foreground: #121212;
-  --sidebar-accent: #0077c6;
-  --sidebar-accent-foreground: #f0f0f0;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #3399dd;
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: #1c1c1c;
+    --card-foreground: #fafafa;
+    --popover: #131313;
+    --popover-foreground: #fafafa;
+    --primary: #0091ff;
+    --primary-foreground: #fafafa;
+    --secondary: #303030;
+    --secondary-foreground: #fafafa;
+    --muted: #131313;
+    --muted-foreground: #8a919e;
+    --accent: #303030;
+    --accent-foreground: #fafafa;
+    --destructive: #ef4444;
+    --destructive-foreground: #131313;
+    --border: #2e2e2e;
+    --input: #2e2e2e;
+    --ring: #7d7d7d;
+    --chart-1: #0091ff;
+    --chart-2: #f2f2f2;
+    --chart-3: #173469;
+    --chart-4: #49505a;
+    --chart-5: #121212;
+    --sidebar: #131313;
+    --sidebar-foreground: #fafafa;
+    --sidebar-primary: #0091ff;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #303030;
+    --sidebar-accent-foreground: #fafafa;
+    --sidebar-border: #2e2e2e;
+    --sidebar-ring: #7d7d7d;
+    --radius: 0.75rem;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  html {
-    height: 100%;
-    overflow: hidden;
-  }
-  body {
-    @apply bg-background text-foreground;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }

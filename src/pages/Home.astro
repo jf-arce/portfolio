@@ -1,0 +1,209 @@
+---
+import { Button } from "@/components/ui/button";
+import Layout from "@/layouts/Layout.astro";
+import Github from "@/components/icons/Github.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import { ArrowRightIcon } from "lucide-react";
+import { TypingAnimation } from "@/components/ui/typing-animation";
+import { AuroraText } from "@/components/ui/aurora-text";
+import {
+    AnimatedSpan,
+    Terminal,
+    TypingAnimation as TerminalTyping,
+} from "@/components/ui/terminal";
+import PageContainer from "@/layouts/PageContainer.astro";
+---
+
+<Layout>
+    <section
+        class="mx-auto flex min-h-[calc(100vh-68px)] items-center justify-center overflow-hidden"
+    >
+        <div
+            class="absolute top-0 z-[-2] lg:h-screen w-full bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+        >
+        </div>
+
+        <PageContainer
+            class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 sm:gap-10 lg:gap-12 2xl:mb-[68px]"
+        >
+            <div class="flex flex-col gap-4 lg:mb-[68px]">
+                <div class="relative flex justify-center lg:justify-start">
+                    <div
+                        class="w-fit p-1 rounded-full bg-linear-to-tr from-blue-500 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/20"
+                    >
+                        <div class="bg-background p-1.5 rounded-full">
+                            <img
+                                src="/images/hero.jpeg"
+                                alt="Jose Francisco Arce"
+                                class="size-20 2xl:size-22 rounded-full object-cover grayscale transition-all duration-300"
+                            />
+                        </div>
+                    </div>
+                    <a
+                        href="https://www.linkedin.com/in/jose-francisco-arce-b99824248/"
+                        target="_blank"
+                        class="absolute bottom-0 flex items-center gap-1.5 rounded-full border border-background bg-green-500/10 px-2 py-1 text-xs font-medium text-green-500 backdrop-blur-sm transition hover:bg-green-500/20"
+                    >
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                            ></span>
+                            <span
+                                class="relative inline-flex rounded-full size-2 bg-green-500"
+                            ></span>
+                        </span>
+                        Open to work
+                    </a>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex flex-col gap-4">
+                        <h1 class="text-center lg:text-left">
+                            <AuroraText
+                                client:load
+                                className="font-extrabold tracking-tight text-4xl sm:text-5xl 2xl:text-6xl text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-600"
+                            >
+                                Jose Francisco Arce
+                            </AuroraText>
+                        </h1>
+
+                        <h2
+                            class="text-2xl font-semibold text-foreground/80 sm:text-3xl text-center lg:text-left"
+                        >
+                            <span class="text-blue-500"> Full Stack</span>
+                            Developer
+                        </h2>
+                    </div>
+
+                    <p
+                        class="text-muted-foreground text-base sm:text-lg text-balance leading-relaxed max-w-xl text-center lg:text-left"
+                    >
+                        Apasionado de la tecnología con más de 3 años creando
+                        aplicaciones web eficientes y de alto rendimiento. Casi
+                        Ingeniero en Sistemas 🎓 y listo para el siguiente
+                        desafío.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col sm:flex-row gap-7 sm:gap-5 mt-4 justify-center lg:justify-start"
+                >
+                    <div class="flex gap-4 justify-center lg:justify-start">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            asChild
+                            className="rounded-full hover:bg-foreground/10 hover:text-foreground"
+                        >
+                            <a
+                                href="https://github.com/jf-arce"
+                                target="_blank"
+                                aria-label="Github"
+                            >
+                                <Github class="size-9" />
+                            </a>
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            asChild
+                            className="rounded-full hover:bg-blue-500/10 hover:text-blue-500"
+                        >
+                            <a
+                                href="https://www.linkedin.com/in/jose-francisco-arce-b99824248/"
+                                target="_blank"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin class="size-9" />
+                            </a>
+                        </Button>
+                    </div>
+                    <Button
+                        asChild
+                        size="lg"
+                        className="rounded-full font-semibold px-8"
+                    >
+                        <a
+                            href="/about"
+                            class="group flex gap-2 items-center justify-center lg:justify-start"
+                        >
+                            Ver mis Proyectos
+                            <ArrowRightIcon
+                                className="size-4 transition-transform group-hover:translate-x-1"
+                            />
+                        </a>
+                    </Button>
+                </div>
+            </div>
+
+            <div class="w-full flex justify-center lg:justify-end">
+                <Terminal
+                    client:load
+                    className="w-full shadow-2xl shadow-purple-500/10"
+                >
+                    <TerminalTyping
+                        client:load
+                        delay={200}
+                        duration={50}
+                        text="> ./init-profile.sh --user=jf-arce"
+                    />
+
+                    <AnimatedSpan
+                        client:load
+                        delay={2200}
+                        className="text-green-500"
+                    >
+                        ✔ Experience detected: 3+ Years.
+                    </AnimatedSpan>
+
+                    <AnimatedSpan
+                        client:load
+                        delay={2700}
+                        className="text-green-500"
+                    >
+                        ✔ Education: Systems Eng. (Loading...)
+                    </AnimatedSpan>
+
+                    <AnimatedSpan
+                        client:load
+                        delay={3200}
+                        className="text-blue-500"
+                    >
+                        ℹ Analyzing core skills...
+                    </AnimatedSpan>
+
+                    <AnimatedSpan
+                        client:load
+                        delay={3700}
+                        className="text-muted-foreground"
+                    >
+                        - Detected focus: Performance Optimization
+                    </AnimatedSpan>
+                    <AnimatedSpan
+                        client:load
+                        delay={4200}
+                        className="text-muted-foreground"
+                    >
+                        - Primary objective: Efficient Solutions
+                    </AnimatedSpan>
+
+                    <AnimatedSpan
+                        client:load
+                        delay={4700}
+                        className="text-muted-foreground"
+                    >
+                        {" "}
+                    </AnimatedSpan>
+
+                    <TerminalTyping
+                        client:load
+                        delay={4700}
+                        duration={50}
+                        className="text-purple-400 font-bold mt-4"
+                        text="🚀 Profile successfully loaded!"
+                    />
+                </Terminal>
+            </div>
+        </PageContainer>
+    </section>
+</Layout>

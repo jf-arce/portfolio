@@ -1,0 +1,43 @@
+---
+import { Button } from "@/components/ui/button";
+import PageContainer from "@/layouts/PageContainer.astro";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50">
+    <PageContainer class="flex justify-between py-4">
+        <nav class="flex gap-2 marker:content-none">
+            <li>
+                <Button
+                    variant="link"
+                    className="text-foreground hover:no-underline text-base"
+                    >Inicio</Button
+                >
+            </li>
+            <li>
+                <Button
+                    variant="link"
+                    className="text-foreground hover:no-underline text-base"
+                    >Sobre mí</Button
+                >
+            </li>
+            <li>
+                <Button
+                    variant="link"
+                    className="text-foreground hover:no-underline text-base"
+                    >Proyectos</Button
+                >
+            </li>
+            <li>
+                <Button
+                    variant="link"
+                    className="text-foreground hover:no-underline text-base"
+                    >Contáctame</Button
+                >
+            </li>
+        </nav>
+        <div>
+            <AnimatedThemeToggler client:load />
+        </div>
+    </PageContainer>
+</header>
