@@ -1,14 +1,25 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Home from "@/pages/Home.astro";
-import Navbar from "@/layouts/Navbar.astro";
 import Footer from "@/layouts/Footer.astro";
+import { DockNavbar } from "@/layouts/dock-navbar";
+import PageContainer from "@/layouts/PageContainer.astro";
+import Projects from "@/sections/Projects.astro";
+import Hero from "@/sections/Hero.astro";
+import About from "@/sections/About.astro";
 ---
 
 <Layout>
-    <Navbar />
-    <main class="mt-[68px]">
-        <Home />
+    <DockNavbar client:load />
+    <main class="pt-5 sm:pt-0">
+        <PageContainer>
+            <Hero />
+            <About />
+            <Projects />
+        </PageContainer>
+        <div
+            class="absolute top-0 z-[-2] lg:h-screen w-full bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+        >
+        </div>
     </main>
     <Footer />
 </Layout>
