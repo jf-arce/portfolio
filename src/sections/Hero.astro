@@ -6,9 +6,11 @@ import HeroAvatar from "@/components/HeroAvatar.astro";
 import HeroCallToActions from "@/components/HeroCallToActions.astro";
 ---
 
-<section class="mx-auto flex min-h-screen items-center justify-center">
+<section
+    class="mx-auto flex min-h-[calc(100vh-78px)] items-center justify-center"
+>
     <div
-        class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 sm:gap-10 lg:gap-12"
+        class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 sm:gap-10 lg:gap-12 2xl:mb-[78px]"
     >
         <div class="flex flex-col gap-4 lg:mb-16">
             <HeroAvatar />
@@ -25,7 +27,7 @@ import HeroCallToActions from "@/components/HeroCallToActions.astro";
                     </h1>
 
                     <h2
-                        class="text-2xl font-semibold text-foreground/80 sm:text-3xl text-center lg:text-left"
+                        class="text-2xl font-semibold text-foreground sm:text-3xl text-center lg:text-left"
                     >
                         <span class="text-blue-500"> Full Stack</span>
                         Developer
@@ -33,7 +35,7 @@ import HeroCallToActions from "@/components/HeroCallToActions.astro";
                 </div>
 
                 <p
-                    class="text-muted-foreground text-base sm:text-lg text-balance lg:text-pretty 2xl:text-balance leading-relaxed max-w-xl text-center lg:text-left"
+                    class="text-foreground dark:text-muted-foreground text-base 2xl:text-lg text-balance lg:text-pretty 2xl:text-balance leading-relaxed max-w-xl text-center lg:text-left"
                 >
                     Apasionado de la tecnología con más de 3 años creando
                     aplicaciones web eficientes y de alto rendimiento. Casi

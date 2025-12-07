@@ -63,20 +63,20 @@ const Icons = {
 const DATA = {
     navbar: [
         { href: "#", icon: HomeIcon, label: "Inicio" },
-        { href: "#", icon: User2Icon, label: "Sobre mí" },
-        { href: "#", icon: FolderDotIcon, label: "Proyectos" },
-        { href: "#", icon: MailIcon, label: "Contacto" },
+        { href: "#about", icon: User2Icon, label: "Sobre mí" },
+        { href: "#projects", icon: FolderDotIcon, label: "Proyectos" },
+        { href: "#contact", icon: MailIcon, label: "Contacto" },
     ],
     contact: {
         social: {
             GitHub: {
                 name: "GitHub",
-                url: "#",
+                url: "https://github.com/jf-arce",
                 icon: Icons.github,
             },
             LinkedIn: {
                 name: "LinkedIn",
-                url: "#",
+                url: "https://linkedin.com/in/jose-francisco-arce-b99824248",
                 icon: Icons.linkedin,
             },
         },
@@ -85,7 +85,7 @@ const DATA = {
 
 export function DockNavbar() {
     return (
-        <div className="flex flex-col items-center justify-center fixed bottom-5 left-0 right-0 z-50">
+        <div className="flex flex-col items-center justify-center fixed bottom-5 lg:bottom-auto lg:top-0 left-0 right-0 z-50">
             <TooltipProvider>
                 <Dock direction="middle">
                     {DATA.navbar.map((item) => (
@@ -114,14 +114,17 @@ export function DockNavbar() {
                     ))}
 
                     <Separator orientation="vertical" className="h-full" />
-                    {/* {Object.entries(DATA.contact.social).map(
+
+                    {Object.entries(DATA.contact.social).map(
                         ([name, social]) => (
-                            <DockIcon key={name}>
+                            <DockIcon key={name} className="hidden sm:flex">
                                 <Tooltip>
                                     <TooltipTrigger asChild>
                                         <a
                                             href={social.url}
                                             aria-label={social.name}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className={cn(
                                                 buttonVariants({
                                                     variant: "ghost",
@@ -139,7 +142,8 @@ export function DockNavbar() {
                                 </Tooltip>
                             </DockIcon>
                         )
-                    )} */}
+                    )}
+
                     <DockIcon>
                         <Tooltip>
                             <TooltipTrigger>
