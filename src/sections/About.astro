@@ -1,5 +1,10 @@
-<section id="about">
-    <div class="flex flex-col gap-8">
+---
+import Section from "@/components/Section.astro";
+import { TechStackLogoLoop } from "@/components/TechStackLogoLoop";
+---
+
+<section id="about" class="pb-10">
+    <div class="flex flex-col gap-10 justify-between overflow-hidden">
         <h2 class="text-4xl font-bold">Sobre mí</h2>
         <p class="text-pretty">
             Estoy en mi último año de Ingeniería en Sistemas y tengo más de 3
@@ -11,5 +16,8 @@
             y trabajar en productos que generen impacto real. Soy una persona
             comprometida, curiosa y con muchas ganas de seguir mejorando.
         </p>
+        <div class="mt-10">
+            <TechStackLogoLoop client:load />
+        </div>
     </div>
 </section>

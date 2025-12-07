@@ -1,0 +1,10 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<section
+    class={`min-h-[calc(100vh-78px)] flex items-center justify-center ${className}`}
+    {...rest}
+>
+    <slot />
+</section>
