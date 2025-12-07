@@ -5,10 +5,8 @@ import {
     CalendarIcon,
     HomeIcon,
     MailIcon,
-    PencilIcon,
     User2Icon,
     FolderDotIcon,
-    FolderOpenDotIcon,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
