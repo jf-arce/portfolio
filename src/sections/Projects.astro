@@ -1,8 +1,9 @@
 ---
 import { ProjectsBento } from "@/components/projects-bento";
+import Section from "@/components/Section.astro";
 ---
 
-<section class="py-16 flex flex-col gap-8" id="projects">
-    <h1 class="text-4xl font-bold">Últimos Proyectos</h1>
+<Section class="flex flex-col gap-10 items-start" id="projects">
+    <h2 class="text-3xl font-bold">Últimos Proyectos</h2>
     <ProjectsBento client:visible />
-</section>
+</Section>

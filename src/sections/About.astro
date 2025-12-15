@@ -1,23 +1,65 @@
 ---
 import Section from "@/components/Section.astro";
 import { TechStackLogoLoop } from "@/components/TechStackLogoLoop";
+import { Button } from "@/components/ui/button";
+import { IconCloud } from "@/components/ui/icon-cloud";
+const slugs = [
+    "typescript",
+    "javascript",
+    "react",
+    "dotnet",
+    "android",
+    "html5",
+    "css3",
+    "nodedotjs",
+    "express",
+    "nextdotjs",
+    "prisma",
+    "amazonaws",
+    "postgresql",
+    "firebase",
+    "nginx",
+    "vercel",
+    "jest",
+    "docker",
+    "git",
+    "angular",
+    "github",
+    "gitlab",
+    "visualstudiocode",
+    "figma",
+];
+
+const images = slugs.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+);
 ---
 
-<section id="about" class="pb-10">
-    <div class="flex flex-col gap-10 justify-between overflow-hidden">
-        <h2 class="text-4xl font-bold">Sobre mí</h2>
-        <p class="text-pretty">
-            Estoy en mi último año de Ingeniería en Sistemas y tengo más de 3
-            años de experiencia trabajando como freelance. Desarrollé sitios
-            web, dashboards y soluciones a medida para distintos clientes,
-            aprendiendo a gestionar proyectos, comunicarme bien y resolver
-            problemas de forma autónoma. Me interesa seguir creciendo dentro de
-            un equipo profesional donde pueda aportar, aprender buenas prácticas
-            y trabajar en productos que generen impacto real. Soy una persona
-            comprometida, curiosa y con muchas ganas de seguir mejorando.
-        </p>
-        <div class="mt-10">
-            <TechStackLogoLoop client:load />
+<section id="about" class="mb-24">
+    <div class="flex gap-10 justify-between overflow-hidden relative">
+        <div class="relative overflow-hidden flex-1 flex justify-center">
+            <IconCloud client:visible images={images} />
         </div>
+        <div class="flex flex-col gap-4 flex-1">
+            <h2 class="text-3xl font-bold">Sobre mí</h2>
+            <p class="text-pretty">
+                Estoy en mi último año de Ingeniería en Sistemas y tengo más de
+                3 años de experiencia trabajando como freelance. Desarrollé
+                sitios web, dashboards y soluciones a medida para distintos
+                clientes, aprendiendo a gestionar proyectos, comunicarme bien y
+                resolver problemas de forma autónoma. Me interesa seguir
+                creciendo dentro de un equipo profesional donde pueda aportar,
+                aprender buenas prácticas y trabajar en productos que generen
+                impacto real. Soy una persona comprometida, curiosa y con muchas
+                ganas de seguir mejorando.
+            </p>
+            <div>
+                <Button variant={"default"}>Ver mis Proyectos</Button>
+            </div>
+        </div>
+
+        <!-- <div class="mt-10">
+            <TechStackLogoLoop client:load />
+        </div> -->
     </div>
 </section>
